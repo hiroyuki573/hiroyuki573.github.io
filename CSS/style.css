@@ -1,0 +1,201 @@
+/* common */
+
+body {
+  margin: 0;  /* ボディのマージンをリセット */
+  font-family: Arial, Helvetica, sans-serif;  /* 文字の書体を設定 */
+}
+
+h1,h2 {
+  margin: 0;  /* h1のマージンをリセット */
+  font-weight: normal;  /* 太字を解除 */
+}
+
+p {
+  margin: 0;  /* マージンをリセット */
+}
+
+img {
+  vertical-align: bottom;  /* 行ボックスの下にimgが配置される */
+}
+
+.container {
+  margin: 0 16px;  /* 上下の空白は0pxで左右の空白を16pxに設定する */
+  /* outline: 2px solid red;  ボックス幅などをわかりやすくする為 */
+}
+
+ul {
+  list-style: none;  /* 黒点を消す */
+  margin: 0;  /* マージンをリセット */
+  padding: 0;  /* パディングをリセット */
+}
+
+a {
+  text-decoration: none;  /* 下線を消す */
+  color: inherit;  /* インへリッドはそこで設定されている色をそのまま継承する */
+  transition: opacity .3s;  /* オパシティの変化に0.3秒かけてね（じわっと色を変える） */
+}
+
+a:hover {
+  opacity: .5;  /* 『オパシティ』→透明度、透明度を0.5に設定（半透明） */
+}
+
+/* header */
+
+header {
+  /* background: #eee;  わかりやすくする為背景色を設定 */
+  padding: 8px 0;  /* 上下に空白を8px設定する */
+}
+
+header .container {
+  display: flex;  /* 要素を横並びにする */
+  justify-content: space-between;  /* 要素の間に均等な空白を設定する */
+  align-items: center;  /* ←交差軸に沿って中央揃え */
+}
+
+header ul {
+  display: flex;  /* 要素を横並びにする */
+}
+
+header li a {
+  display: flex;  /* 要素を横並びにする（<i>とテキスト） */
+  flex-direction: column;  /* 主軸と交差軸が逆になります。縦並びにする */
+  font-size: 12px;  /* 文字サイズを12px設定する */
+  text-align: center;  /* テキストを中央揃え */
+}
+
+header li a i {
+  font-size: 18px;  /* 文字サイズを18pxに設定する */
+}
+
+header li + li {
+  margin-left: 8px;  /* liとの次のliの左側に余白を8px設定する */
+}
+
+header form {
+  display: none;  /* 非表示に設定する */
+}
+
+header input,
+header button {
+  all: unset;  /* 『オール』『アンセット』全てのスタイルをリセットする */
+}
+
+header input {
+  border-bottom: 1px solid #aaa;
+  padding: 4px;  /* 上下左右に4pxのパディングを設定する */
+  width: 300px;  /* 幅を300pxに指定 */
+}
+
+header button {
+  cursor: pointer;  /* ボタン要素にマウスホバーするとカーソルの形が指の形に変わる */
+}
+
+/* hero */
+
+.hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  /* ↑『オブジェクト-フィット』『カバー』にすると、この領域の中で縦横比を保ったまま、なるべく大きく表示してくれる */
+}
+
+/* products */
+
+.products {
+  padding: 80px 0;  /* 上下にのみ80pxの余白を指定する */
+}
+
+.products ul {
+  margin-top: 32px;  /* 要素の上に32pxの空白を設定する */
+  display: flex;  /* 要素を横並びにする */
+  flex-wrap: wrap;  /* 主軸に沿って並べていて、あふれたら交差軸の方向に次のコンテナが作られて、また主軸の方向に並べられていくイメージです */
+  gap: 16px;  /* 要素の間に16pxの空白を設定する */
+}
+
+.products li {
+  /* width: 50 ;  100%の幅のときに2つのliを表示したいので、幅は50%に指定する */
+  width: calc((100% - 16px) / 2);  /* 100%の幅から16pxを引いて2等分する */
+  /* outline: 2px solid blue;  領域がわかりやすいように */
+}
+
+.products li img {
+  width: 100%;  /* 画像を要素の幅いっぱいに表示させる */
+}
+
+.products li h2 {
+  font-size: 16px;  /* 文字サイズを16pxに設定する */
+  margin-top: 8px;  /* 要素の上に32pxの空白を設定する */
+}
+
+.products li a {
+  display: block;  /* 全てをインラインではなくブロックに設定する */
+}
+
+.products .more {
+  display: block;  /* <a>をインラインボックスからボックスへ変更する */
+  width: 70%;  /* 幅を70%に設定する */
+  line-height: 48px;  /* 行ボックスを48pxに設定する（テキスト16px上下の空白を16pxずつ） */
+  border: 2px solid #333;  /* 枠を設定 */
+  text-align: center;  /* テキストを中央揃えに指定する */
+  margin: 32px auto 0;  /* 上に32pxの空白左右はオートにして均等に空白が設定されるように指定する */
+}
+
+/* footer */
+
+footer {
+  background: #4c4948;  /* 背景色の設定 */
+  padding: 16px 0;  /* <footer>の上下に16pxの余白を設定 */
+  color: #eee;  /* 文字色の設定 */
+}
+
+footer .container {
+  display: flex;  /* 要素を横並びにする */
+  justify-content: space-between;  /* 要素の間に均等な空白を設定する */
+  align-items: center;  /* ←交差軸に沿って中央揃え */
+}
+
+footer small {
+  font-size: 16px;  /* 文字サイズを16pxに指定 */
+}
+
+footer li i {
+  font-size: 24px;  /* 文字サイズを24pxに指定 */
+}
+
+footer ul {
+  display: flex;  /* 要素を横並びにする */
+}
+
+footer li+li {
+  margin-left: 8px;  /* liに次ぐliの左に余白を8px設定する */
+}
+
+/* medium screen */
+
+@media (min-width: 600px) {
+  body {
+    /* background: pink;  設定が上手く動作しているかわかりやすくする為 */
+  }
+
+  .products li {
+    width: calc((100% - 32px) / 3);  /* 100%の幅から16pxの空白を２つ入れたいので、32pxを引いて3等分する */
+  }
+}
+
+/* large screen */
+
+@media (min-width: 800px) {
+  body {
+    /* background: skyblue;  設定が上手く動作しているかわかりやすくする為 */
+  }
+
+  .container {
+    width: calc(100% - 32px);  /* ちょうど800pxになったときにも両側に16pxの余白が欲しいので幅を100%から32px引いた値に設定 */
+    margin: 0 auto;  /* 上下の余白は0で左右の余白を均等に振り分けて中央揃えにする */
+    max-width: 800px;  /* 最大幅を800pxで固定にする */
+  }
+
+  header form {
+    display: block;  /* 非表示から表示に設定する */
+  }
+}
